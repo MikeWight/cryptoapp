@@ -6,7 +6,9 @@ import Home from './pages/Home';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import Account from './pages/Account';
+import CoinPage from './pages/CoinPage';
 import axios from 'axios';
+import Footer from './components/Footer';
 
 function App() {
     const [coins, setCoins] = useState([]);
@@ -28,7 +30,11 @@ function App() {
                 <Route path="/signin" element={<Signin />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/account" element={<Account />} />
+                <Route path="/coin" element={<CoinPage />}>
+                    <Route path=":coinId" />
+                </Route>
             </Routes>
+            <Footer />
         </ThemeProvider>
     );
 }
